@@ -31,15 +31,15 @@ public class LoginTest extends BaseTest {
 
         if (expectedResult.equalsIgnoreCase("valid")) {
 
-            // 🔹 Explicit Wait for Title
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            //  Explicit Wait for Title
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.titleContains("ServiceNow"));
 
             String actualTitle = driver.getTitle();
             System.out.println("Home Page Title: " + actualTitle);
 
             Assert.assertTrue(actualTitle.contains("ServiceNow"),
-                    "Home page title validation FAILED");
+                    "Home page title validation PASSED");
         } else {
 
             // Invalid login → error message displayed
